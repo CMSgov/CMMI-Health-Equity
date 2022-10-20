@@ -1,0 +1,502 @@
+{
+  "status": "draft",
+  "name": "North_Carolina_Healthy_Opportunities_Screening_Questions",
+  "title": "North Carolina Healthy Opportunities Screening Questions",
+  "_title": {
+    "extension": [
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension" : [
+          {
+            "url" : "lang",
+            "valueCode" : "es"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Evaluación de salud"
+          }
+        ]
+      }
+    ]
+  },
+  "resourceType": "Questionnaire",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|2.7"
+    ],
+    "tag": [
+      {
+        "code": "lformsVersion: 29.2.1"
+      }
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "ValueSet",
+      "id": "yes-no",
+      "expansion": {
+        "contains": [
+          {
+            "system": "http://loinc.org",
+            "code": "LA33-6",
+            "display": "Yes",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Sí"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA32-8",
+            "display": "No",
+            "designation": [
+              {
+                "language": "es",
+                "value": "No"
+              }
+            ]
+          },
+          {
+            "system": "http://hl7.org/fhir/v3/NullFlavor",
+            "code": "ASKU",
+            "display": "I prefer not to answer",
+            "designation": [
+              {
+                "language": "es",
+                "value": "I prefer not to answer"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "description-blurb",
+      "type": "display",
+      "text": "We believe everyone should have the opportunity for health.  Some things like not having enough food or reliable transportation or a safe place to live can make it hard to be healthy. Please answer the following questions to help us better understand you and your current situation. We may not be able to find resources for all of your needs, but we will try and help as much as we can.",
+      "_text": {
+        "extension": [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "es"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Nosotros creemos que todas las personas deberían tener la oportunidad de estar sanas.  Algunas cosas como no tener suficiente alimento, transporte confiable o un lugar seguro dónde vivir, pueden hacer difícil que se encuentre sano. Por favor responda las siguientes preguntas para ayudarnos a entender mejor su situación actual. Quizá no podamos encontrar recursos para todas sus necesidades, pero intentaremos ayudarle en todo lo posible."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "group",
+      "required": false,
+      "linkId": "food",
+      "text": "Food",
+      "_text": {
+        "extension": [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "es"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Alimentos"
+              }
+            ]
+          }
+        ]
+      },
+      "item": [
+        {
+          "linkId": "food-worry",
+          "type": "choice",
+          "required": false,
+          "prefix": "1",
+          "text": "Within the past 12 months, did you worry that your food would run out before you got money to buy more?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "En los últimos 12 meses, ¿tuvo la preocupación de que se le iba a acabar el alimento antes de tener dinero para comprar más?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#yes-no"
+        },
+        {
+          "linkId": "food-ran-out",
+          "type": "choice",
+          "required": false,
+          "prefix": "2",
+          "text": "Within the past 12 months, did the food you bought just not last and you didn’t have money to get more?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "En los últimos 12 meses, ¿el alimento que compró no le rindió y no tuvo dinero para comprar más?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#yes-no"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "required": false,
+      "linkId": "housing-utilities",
+      "text": "Housing/ Utilities",
+      "_text": {
+        "extension": [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "es"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Vivienda/Servicios públicos"
+              }
+            ]
+          }
+        ]
+      },
+      "item": [
+        {
+          "linkId": "housing-utilities-3",
+          "type": "choice",
+          "required": false,
+          "prefix": "3",
+          "text": "Within the past 12 months, have you ever stayed: outside, in a car, in a tent, in an overnight shelter, or temporarily in someone else’s home (i.e. couch-surfing)?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "En los últimos 12 meses, ¿ha tenido que quedarse a la intemperie, en un auto, tienda de campaña, refugio público o temporalmente en casa de alguien -quedándose en el sofá-?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#yes-no"
+        },
+        {
+          "linkId": "housing-utilities-4",
+          "type": "choice",
+          "required": false,
+          "prefix": "4",
+          "text": "Are you worried about losing your housing?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "¿Le preocupa la posibilidad de perder su casa?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#yes-no"
+        },
+        {
+          "linkId": "housing-utilities-5",
+          "type": "choice",
+          "required": false,
+          "prefix": "5",
+          "text": "Within the past 12 months, have you been unable to get utilities (heat, electricity) when it was really needed?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "En los últimos 12 meses, ¿no le fue posible tener servicios públicos -calefacción, electricidad- cuando tenía gran necesidad de ellos?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#yes-no"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "required": false,
+      "linkId": "transportation",
+      "text": "Transportation",
+      "_text": {
+        "extension": [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "es"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Transporte"
+              }
+            ]
+          }
+        ]
+      },
+      "item": [
+        {
+          "linkId": "transportation-6",
+          "type": "choice",
+          "required": false,
+          "prefix": "6",
+          "text": "Within the past 12 months, has a lack of transportation kept you from medical appointments or from doing things needed for daily living?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "En los últimos 12 meses, ¿la falta de transporte le ha impedido llegar a citas médicas o realizar actividades de la vida diaria?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#yes-no"
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "required": false,
+      "linkId": "interpersonal-safety",
+      "text": "Interpersonal Safety",
+      "_text": {
+        "extension": [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "es"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Seguridad interpersonal"
+              }
+            ]
+          }
+        ]
+      },
+      "item": [
+        {
+          "linkId": "interpersonal-safety-7",
+          "type": "choice",
+          "required": false,
+          "prefix": "7",
+          "text": "Do you feel physically or emotionally unsafe where you currently live?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "¿Se siente usted inseguro física o emocionalmente en donde vive actualmente?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#yes-no"
+        },
+        {
+          "linkId": "interpersonal-safety-8",
+          "type": "choice",
+          "required": false,
+          "prefix": "8",
+          "text": "Within the past 12 months, have you been hit, slapped, kicked or otherwise physically hurt by anyone?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "En los últimos 12 meses, ¿alguien le ha golpeado, cacheteado, pateado o lastimado físicamente?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#yes-no"
+        },
+        {
+          "linkId": "interpersonal-safety-9",
+          "type": "choice",
+          "required": false,
+          "prefix": "9",
+          "text": "Within the past 12 months, have you been humiliated or emotionally abused by anyone?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "En los últimos 12 meses, ¿alguien le ha humillado o ha abusado emocionalmente de usted?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#yes-no"
+        }
+      ]
+    },
+
+    {
+      "type": "group",
+      "required": false,
+      "linkId": "immediate-need",
+      "text": "Optional: Immediate Need",
+      "_text": {
+        "extension": [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "es"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Optional: Necesidad inmediata"
+              }
+            ]
+          }
+        ]
+      },
+      "item": [
+        {
+          "linkId": "immediate-need-10",
+          "type": "choice",
+          "required": false,
+          "prefix": "10",
+          "text": "Are any of your needs urgent? For example, you don’t have food for tonight, you don’t have a place to sleep tonight, you are afraid you will get hurt if you go home today.",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "¿Son urgentes sus necesidades?  Por ejemplo: usted no tiene comida para esta noche, usted no tiene un lugar para dormir esta noche, o si usted tiene miedo de ir a su casa porque puede confrontar problemas."
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#yes-no"
+        },
+        {
+          "linkId": "immediate-need-11",
+          "type": "choice",
+          "required": false,
+          "prefix": "11",
+          "text": "Would you like help with any of the needs that you have identified?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "¿Le gustaría tener ayuda en cualquiera de las necesidades que usted ha identificado?"
+                  }
+                ]
+              }
+            ]
+          },
+          "answerValueSet": "#yes-no"
+        }
+      ]
+    }
+  ]
+}

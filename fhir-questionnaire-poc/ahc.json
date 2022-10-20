@@ -1,0 +1,904 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "96777-8",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire|2.8.0"
+    ],
+    "versionId": "2",
+    "lastUpdated": "2021-08-23T12:23:31.053+00:00",
+    "source": "#GCNaqRgPOfzKzXeq"
+  },
+  "language": "en",
+  "name": "Accountable_health_communities_health_related_social_needs_screening_tool",
+  "title": "Accountable health communities health-related social needs screening tool",
+  "_title": {
+    "extension": [
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+        "extension" : [
+          {
+            "url" : "lang",
+            "valueCode" : "es"
+          },
+          {
+            "url" : "content",
+            "valueString" : "Herramienta de análisis de Necesidades Sociales Relacionadas con la Salud (HRSN) de Comunidades de Salud Responsable (AHC)"
+          }
+        ]
+      }
+    ]
+  },
+  "status": "draft",
+  "copyright": "Content from LOINC® is copyright © 1995-2021 Regenstrief Institute, Inc. and the LOINC Committee, and available at no cost under the license at https://loinc.org/license/\r\nCopyright © 2005 Kevin Sherin, M.D. Used with permission",
+  "code": [
+    {
+      "system": "http://loinc.org",
+      "code": "96777-8",
+      "display": "Accountable health communities health-related social needs screening tool"
+    }
+  ],
+  "contained": [
+    {
+      "resourceType": "ValueSet",
+      "id": "living-situation",
+      "expansion": {
+        "contains": [
+          {
+            "system": "http://loinc.org",
+            "code": "LA31993-1",
+            "display": "I have a steady place to live",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Tengo un lugar estable para vivir."
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA31994-9",
+            "display": "I have a place to live today, but I am worried about losing it in the future",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Actualmente tengo un lugar para vivir pero me preocupa perderlo en el futuro."
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA31995-6",
+            "display": "I do not have a steady place to live (I am temporarily staying with others, in a hotel, in a shelter, living outside on the street, on a beach, in a car, abandoned building, bus or train station, or in a park)",
+            "designation": [
+              {
+                "language": "es",
+                "value": "No tengo un lugar estable para vivir (me estoy quedando temporalmente con otras personas, en un hotel, en un refugio, vivo en la calle, en la playa, en un automóvil, un edificio abandonado, en una estación de autobuses o tren, o en un parque)."
+              }
+            ]
+          },
+          {
+            "system": "http://hl7.org/fhir/v3/NullFlavor",
+            "code": "ASKU",
+            "display": "I prefer not to answer",
+            "designation": [
+              {
+                "language": "es",
+                "value": "I prefer not to answer"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "living-place-problems",
+      "expansion": {
+        "contains": [
+          {
+            "system": "http://loinc.org",
+            "code": "LA31996-4",
+            "display": "Pests such as bugs, ants, or mice",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Pestes como insectos, hormigas o ratas"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA28580-1",
+            "display": "Mold",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Moho"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA31997-2",
+            "display": "Lead paint or pipes",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Pintura o tuberías con plomo"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA31998-0",
+            "display": "Lack of heat",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Falta de calefacción"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA31999-8",
+            "display": "Oven or stove not working",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Horno o cocina que no funciona"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA32000-4",
+            "display": "Smoke detectors missing or not working",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Falta de detectores de humo o no funcionan"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA32001-2",
+            "display": "Water leaks",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Filtración de agua o gotera"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA9-3",
+            "display": "None of the above",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Ninguna de las anteriores"
+              }
+            ]
+          },
+          {
+            "system": "http://hl7.org/fhir/v3/NullFlavor",
+            "code": "ASKU",
+            "display": "I prefer not to answer",
+            "designation": [
+              {
+                "language": "es",
+                "value": "I prefer not to answer"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "frequency-unscored",
+      "expansion": {
+        "contains": [
+          {
+            "system": "http://loinc.org",
+            "code": "LA28397-0",
+            "display": "Often true",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Frecuentemente"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA6729-3",
+            "display": "Sometimes true",
+            "designation": [
+              {
+                "language": "es",
+                "value": "A veces"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA28398-8",
+            "display": "Never true",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Nunca"
+              }
+            ]
+          },
+          {
+            "system": "http://hl7.org/fhir/v3/NullFlavor",
+            "code": "ASKU",
+            "display": "I prefer not to answer",
+            "designation": [
+              {
+                "language": "es",
+                "value": "I prefer not to answer"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "utility-shut-off",
+      "expansion": {
+        "contains": [
+          {
+            "system": "http://loinc.org",
+            "code": "LA33-6",
+            "display": "Yes",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Sí"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA32-8",
+            "display": "No",
+            "designation": [
+              {
+                "language": "es",
+                "value": "No"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA32002-0",
+            "display": "Already shut off",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Están cancelados"
+              }
+            ]
+          },
+          {
+            "system": "http://hl7.org/fhir/v3/NullFlavor",
+            "code": "ASKU",
+            "display": "I prefer not to answer",
+            "designation": [
+              {
+                "language": "es",
+                "value": "I prefer not to answer"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "yes-no",
+      "expansion": {
+        "contains": [
+          {
+            "system": "http://loinc.org",
+            "code": "LA33-6",
+            "display": "Yes",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Sí"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA32-8",
+            "display": "No",
+            "designation": [
+              {
+                "language": "es",
+                "value": "No"
+              }
+            ]
+          },
+          {
+            "system": "http://hl7.org/fhir/v3/NullFlavor",
+            "code": "ASKU",
+            "display": "I prefer not to answer",
+            "designation": [
+              {
+                "language": "es",
+                "value": "I prefer not to answer"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resourceType": "ValueSet",
+      "id": "frequency-scored",
+      "expansion": {
+        "contains": [
+          {
+           "system": "http://loinc.org",
+           "code": "LA6270-8",
+           "display": "Never",
+           "designation": [
+             {
+               "language": "es",
+               "value": "Nunca"
+             }
+           ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA10066-1",
+            "display": "Rarely",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Rara vez"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA10082-8",
+            "display": "Sometimes",
+            "designation": [
+              {
+                "language": "es",
+                "value": "A veces"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA16644-9",
+            "display": "Fairly often",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Bastante a menudo"
+              }
+            ]
+          },
+          {
+            "system": "http://loinc.org",
+            "code": "LA6482-9",
+            "display": "Frequently",
+            "designation": [
+              {
+                "language": "es",
+                "value": "Frecuentemente"
+              }
+            ]
+          },
+          {
+            "system": "http://hl7.org/fhir/v3/NullFlavor",
+            "code": "ASKU",
+            "display": "I prefer not to answer",
+            "designation": [
+              {
+                "language": "es",
+                "value": "I prefer not to answer"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "description-blurb",
+      "type": "display",
+      "text": "The Center for Medicare and Medicaid Services developed this Social Determinants of Health questionnaire to connect patients to services that can help address their needs. The questions are designed to help us understand if people need help with areas of their lives outside the clinic. Your answers will be used only for this program, and we will keep them confidential. You don’t need to answer, but you could be eligible for assistance if you do.",
+      "_text": {
+        "extension": [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "es"
+              },
+              {
+                "url" : "content",
+                "valueString" : ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "linkId": "living-situation",
+      "type": "group",
+      "text": "Living Situation",
+      "_text": {
+        "extension": [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "es"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Situación de vivienda"
+              }
+            ]
+          }
+        ]
+      },
+      "item": [
+        {
+          "linkId": "/71802-3",
+          "code": [
+            {
+              "system": "http://loinc.org",
+              "code": "71802-3",
+              "display": "What is your living situation today?"
+            }
+          ],
+          "prefix": "1",
+          "text": "What is your living situation today?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "¿Cuál es su situación de vivienda en la actualidad?"
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "choice",
+          "repeats": false,
+          "answerValueSet": "#living-situation"
+        },
+        {
+          "linkId": "/96778-6",
+          "code": [
+            {
+              "system": "http://loinc.org",
+              "code": "96778-6",
+              "display": "Think about the place you live. Do you have problems with any of the following?"
+            }
+          ],
+          "prefix": "2",
+          "text": "Think about the place you live. Do you have problems with any of the following?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "Piense en el lugar donde vive. ¿Tiene alguno de los siguientes problemas? MARQUE TODAS LAS OPCIONES QUE CORRESPONDAN"
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "choice",
+          "repeats": true,
+          "answerValueSet": "#living-place-problems"
+        }
+      ]
+    },
+    {
+      "linkId": "food",
+      "type": "group",
+      "text": "Food",
+      "_text": {
+        "extension": [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "es"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Alimentos"
+              }
+            ]
+          }
+        ]
+      },
+      "item": [
+        {
+          "linkId": "/88122-7",
+          "code": [
+            {
+              "system": "http://loinc.org",
+              "code": "88122-7",
+              "display": "Within the past 12 months, you worried that your food would run out before you got money to buy more."
+            }
+          ],
+          "prefix": "3",
+          "text": "Within the past 12 months, you worried that your food would run out before you got money to buy more.",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "En los últimos 12 meses, se preocupó porque su alimentación se acabaría antes de que tuviera dinero para comprar más."
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "choice",
+          "repeats": false,
+          "answerValueSet": "#frequency-unscored"
+        },
+        {
+          "linkId": "/88123-5",
+          "code": [
+            {
+              "system": "http://loinc.org",
+              "code": "88123-5",
+              "display": "Within the past 12 months, the food you bought just didn't last and you didn't have money to get more."
+            }
+          ],
+          "prefix": "4",
+          "text": "Within the past 12 months, the food you bought just didn't last and you didn't have money to get more.",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "En los últimos 12 meses, los alimentos que compró no alcanzaron o no tuvo dinero para comprar más."
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "choice",
+          "repeats": false,
+          "answerValueSet": "#frequency-unscored"
+        }
+      ]
+    },
+    {
+      "linkId": "transportation",
+      "type": "group",
+      "text": "Transportation",
+      "_text": {
+        "extension": [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "es"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Transporte"
+              }
+            ]
+          }
+        ]
+      },
+      "item": [
+        {
+          "linkId": "/93030-5",
+          "code": [
+            {
+              "system": "http://loinc.org",
+              "code": "93030-5",
+              "display": "In the past 12 months, has lack of reliable transportation kept you from medical appointments, meetings, work or from getting things needed for daily living?"
+            }
+          ],
+          "prefix": "5",
+          "text": "In the past 12 months, has lack of reliable transportation kept you from medical appointments, meetings, work or from getting things needed for daily living?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "¿En los últimos 12 meses, la falta de un medio de transporte confiable le ha impedido acudir a citas médicas, reuniones, trabajo u obtener cosas necesarias para la vida diaria?"
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "choice",
+          "repeats": false,
+          "answerValueSet": "#yes-no"
+        }
+      ]
+    },
+    {
+      "linkId": "utilities",
+      "type": "group",
+      "text": "Utilities",
+      "_text": {
+        "extension": [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "es"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Servicios"
+              }
+            ]
+          }
+        ]
+      },
+      "item": [
+        {
+          "linkId": "/96779-4",
+          "code": [
+            {
+              "system": "http://loinc.org",
+              "code": "96779-4",
+              "display": "In the past 12 months has the electric, gas, oil, or water company threatened to shut off services in your home?"
+            }
+          ],
+          "prefix": "6",
+          "text": "In the past 12 months has the electric, gas, oil, or water company threatened to shut off services in your home?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "¿En los últimos 12 meses la compañía de electricidad, gas, combustible o agua amenazó con cancelar los servicios en su hogar?"
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "choice",
+          "repeats": false,
+          "answerValueSet": "#utility-shut-off"
+        }
+      ]
+    },
+    {
+      "linkId": "safety",
+      "type": "group",
+      "text": "Safety",
+      "_text": {
+        "extension": [
+          {
+            "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+            "extension" : [
+              {
+                "url" : "lang",
+                "valueCode" : "es"
+              },
+              {
+                "url" : "content",
+                "valueString" : "Seguridad"
+              }
+            ]
+          }
+        ]
+      },
+      "item": [
+        {
+          "linkId": "/95618-5",
+          "code": [
+            {
+              "system": "http://loinc.org",
+              "code": "95618-5",
+              "display": "How often does anyone, including family and friends, physically hurt you?"
+            }
+          ],
+          "prefix": "7",
+          "text": "How often does anyone, including family and friends, physically hurt you?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "¿Cuán frecuente alguien, incluyendo su familia y amigos, lo/la lastiman físicamente?"
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "choice",
+          "repeats": false,
+          "answerValueSet": "#frequency-scored"
+        },
+        {
+          "linkId": "/95617-7",
+          "code": [
+            {
+              "system": "http://loinc.org",
+              "code": "95617-7",
+              "display": "How often does anyone, including family and friends, insult or talk down to you?"
+            }
+          ],
+          "prefix": "8",
+          "text": "How often does anyone, including family and friends, insult or talk down to you?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "¿Cuán frecuente alguien, incluida su familia y amigos, lo/la insulta o le habla con menosprecio?"
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "choice",
+          "repeats": false,
+          "answerValueSet": "#frequency-scored"
+        },
+        {
+          "linkId": "/95616-9",
+          "code": [
+            {
+              "system": "http://loinc.org",
+              "code": "95616-9",
+              "display": "How often does anyone, including family and friends, threaten you with harm?"
+            }
+          ],
+          "prefix": "9",
+          "text": "How often does anyone, including family and friends, threaten you with harm?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "¿Cuán frecuente alguien, incluida su familia y amigos, lo/la amenaza con lastimarla/o?"
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "choice",
+          "repeats": false,
+          "answerValueSet": "#frequency-scored"
+        },
+        {
+          "linkId": "/95615-1",
+          "code": [
+            {
+              "system": "http://loinc.org",
+              "code": "95615-1",
+              "display": "How often does anyone, including family and friends, scream or curse at you?"
+            }
+          ],
+          "prefix": "10",
+          "text": "How often does anyone, including family and friends, scream or curse at you?",
+          "_text": {
+            "extension": [
+              {
+                "url" : "http://hl7.org/fhir/StructureDefinition/translation",
+                "extension" : [
+                  {
+                    "url" : "lang",
+                    "valueCode" : "es"
+                  },
+                  {
+                    "url" : "content",
+                    "valueString" : "¿Cuán frecuente alguien, incluida su familia y amigos, le grita o lo/la insulta?"
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "choice",
+          "repeats": false,
+          "answerValueSet": "#frequency-scored"
+        },
+        {
+          "type": "decimal",
+          "readOnly": true,
+          "code": [
+            {
+              "code": "95614-4",
+              "display": "Safety Total Score"
+            }
+          ],
+          "required": false,
+          "linkId": "/95614-4",
+          "text": "Safety Total Score",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
+              "valueBoolean": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
