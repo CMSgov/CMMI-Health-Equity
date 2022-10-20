@@ -1,0 +1,89 @@
+version: '3'
+services:
+  # Storage of ExportConfigs
+  mongo:
+    image: "mongo:5.0.5"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: pass
+  # Providers to manage ExportConfigs & Exports from the provider-ui
+  provider-api:
+    image: "node:14.12-alpine"
+    working_dir: "/home/node/app"
+    volumes:
+      - "./provider-api:/home/node/app"
+    environment:
+      MONGO_URI: "mongodb://root:pass@mongo:27017"
+      MONGO_DB_NAME: "export-configs"
+      PORT: 8081
+    command: "npm run dev"
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongo
+
+  # Tests for the provider-api, these run against the bulk-data-server
+  provider-api-test:
+    image: "node:14.12-alpine"
+    working_dir: "/home/node/app/provider-api"
+    volumes:
+      - "./:/home/node/app"
+    environment:
+      MONGO_URI: "mongodb://root:pass@mongo:27017"
+      MONGO_DB_NAME: "export-configs-test"
+      PORT: 8081
+    command: "npm run test -- --watchAll"
+    depends_on:
+      - mongo
+      - bulk-data-server
+      - content-server
+    profiles:
+      - test
+  
+  # Local instance of https://bulk-data.smarthealthit.org/
+  bulk-data-server:
+    build:
+      context: ./bulk-data-server
+      dockerfile: Dockerfile
+    ports:
+      - "9443:9443"
+    environment:
+      BASE_URL: "http://bulk-data-server:9443"
+  
+  content-server:
+    image: "nginx:1.21.6"
+    volumes:
+      - "./provider-ui/dist:/app/content/provider-ui/provider"
+      - "./provider-api/jwks:/shared/jwks"
+      - "./content-server/nginx.conf:/etc/nginx/conf.d/default.conf"
+    ports:
+      - "8090:80"
+
+  # Local mock for the Azure Healthcare API, which is the FHIR service used by the CDX project 
+  fhir-api:
+    image: "mcr.microsoft.com/healthcareapis/r4-fhir-server"
+    environment:
+      FHIRServer__Security__Enabled: "false"
+      SqlServer__ConnectionString: "Server=tcp:sql,1433;Initial Catalog=FHIR;Persist Security Info=False;User ID=sa;Password=Pass1word;MultipleActiveResultSets=False;Connection Timeout=30;Trust Server Certificate=true;"
+      SqlServer__AllowDatabaseCreation: "true"
+      SqlServer__Initialize: "true"
+      SqlServer__SchemaOptions__AutomaticUpdatesEnabled: "true"
+      DataStore: "SqlServer"
+    ports:
+      # Expose on 8082 for testing / leaving 8080 open
+      - "8082:8080"
+    depends_on:
+      - sql
+    restart: on-failure:10
+  # Database for the fhir-api
+  sql:
+    image: "mcr.microsoft.com/azure-sql-edge:latest"
+    environment:
+      MSSQL_SA_PASSWORD: Pass1word
+      ACCEPT_EULA: "Y"
+    healthcheck:
+        test: ["CMD", "/opt/mssql-tools/bin/sqlcmd","-U sa -P Pass1word -Q 'SELECT * FROM INFORMATION_SCHEMA.TABLES'"]
+        interval: 10s
+        timeout: 10s
+        retries: 6
+  

@@ -1,0 +1,7 @@
+.bordered-row {
+  border: 1px solid #000000;
+}
+
+.bordered-row > th {
+  background-color: #e6e6e6 !important;
+}

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render TextField 1`] = `
+Array [
+  <label
+    className="usa-label"
+    htmlFor=""
+  >
+    test text field
+  </label>,
+  <input
+    className="usa-input"
+    disabled={false}
+    id=""
+    name=""
+    onChange={[Function]}
+    readOnly={false}
+    type="text"
+    value=""
+  />,
+]
+`;
